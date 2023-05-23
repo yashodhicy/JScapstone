@@ -13,6 +13,7 @@ const display = async (Movies, Likes) => {
     const button = document.createElement('button');
     const comment = document.createElement('button');
     div.className = 'movie-card';
+    div.index = `${index + 1}`;
     movieBar.className = 'movie-description';
     likeBox.className = 'likes';
     span.className = 'likes-counter';

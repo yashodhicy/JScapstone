@@ -1,4 +1,4 @@
 # .gitignore
-node_modules/
-commands.txt/
+node_modules
+commands.txt
 coverage/
