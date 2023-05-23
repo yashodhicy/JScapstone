@@ -3,6 +3,8 @@ import getMovie from './modules/getMovies.js';
 import display from './modules/display.js';
 import getLikes from './modules/getLikes.js';
 import like from './modules/like.js';
+import popup from './modules/popup.js';
+import showhide from './modules/showhide.js';
 
 const appId = 'WGv1nO0NTRyk5wZp7rJP';
 
@@ -54,4 +56,24 @@ likeBtns.forEach((item, index) => {
     const likesBox = await likesCount;
     await update(likes, index, likesBox);
   });
+});
+
+// comment button
+const commentbtns = document.querySelectorAll('.comments');
+
+commentbtns.forEach((commentbtn, index) => {
+  commentbtn.addEventListener('click', async () => {
+    const resdata = await getMovie(index + 1);
+    await showhide();
+    await popup(resdata);
+  });
+});
+
+document.addEventListener('click', async (event) => {
+  const { target } = event;
+
+  // Check if the clicked element is the cancel button
+  if (target.classList.contains('cancel-btn')) {
+    await showhide();
+  }
 });

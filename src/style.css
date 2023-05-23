@@ -1,7 +1,7 @@
 :root {
   --black: rgb(0, 0, 0);
   --white: rgb(255, 255, 255);
-  --red: rgb(255, 0, 0);
+  --red: rgb(249, 46, 46);
 }
 
 body {
@@ -15,7 +15,8 @@ body {
 }
 
 header {
-  display: flex;
+  position: fixed;
+  background-color: var(--black);
   width: 100%;
   justify-content: space-around;
   height: 3rem;
@@ -47,7 +48,6 @@ footer {
 }
 
 #movies-container {
-  display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
   margin-bottom: 50px;
@@ -100,4 +100,52 @@ footer {
   font-size: 1.2rem;
   width: 100%;
   height: 50px;
+}
+
+#popup-window {
+  border: 3px solid var(--red);
+  background-color: var(--black);
+  position: absolute;
+  z-index: 999;
+  width: 90%;
+  margin: 3rem;
+  padding: 2rem;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.hide {
+  display: none;
+}
+
+.show {
+  display: flex;
+}
+
+.cancel-btn {
+  background-image: url(images/cancel.png);
+  background-size: cover;
+  background-color: transparent;
+  border: none;
+  position: absolute;
+  margin: 1rem;
+  top: 5px;
+  right: 5px;
+  height: 3rem;
+  width: 3rem;
+}
+
+.details {
+  width: 60%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+  gap: 2rem;
+  text-align: center;
+}
+
+.imageTitleDiv img {
+  width: 20rem;
+  height: 20rem;
 }
