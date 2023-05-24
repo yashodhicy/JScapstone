@@ -5,8 +5,8 @@ import getLikes from './modules/getLikes.js';
 import like from './modules/like.js';
 import popup from './modules/popup.js';
 import showhide from './modules/showhide.js';
-import getComments from './modules/getcomments.js';
 import addcomment from './modules/comment.js';
+import refresh from './modules/refresh.js';
 
 const appId = 'WGv1nO0NTRyk5wZp7rJP';
 
@@ -66,10 +66,9 @@ const commentbtns = document.querySelectorAll('.comments');
 commentbtns.forEach((commentbtn, index) => {
   commentbtn.addEventListener('click', async () => {
     const resdata = await getMovie(index + 1);
-    const rescomments = await getComments(appId,index+1);
     await showhide();
-    await popup(resdata,rescomments);
-    
+    await popup(resdata);
+    refresh(appId, index + 1);
   });
 });
 
@@ -83,21 +82,15 @@ document.addEventListener('click', async (event) => {
 
 // add comment
 
- 
 document.addEventListener('click', async (event) => {
   const { target } = event;
-  // const form = target.parentNode;
-  // const addcomment = form.parentNode;
-  
-
   if (target.classList.contains('submitbtn')) {
     event.preventDefault();
-    let userName = document.getElementById('username').value;
-    let comment = document.getElementById('usercomment').value;
+    const userName = document.getElementById('username').value;
+    const comment = document.getElementById('usercomment').value;
     const movie = target.closest('#popup-window').index;
-    const userComment ={userName,comment};
-    //console.log(movie,userComment);
-    await addcomment(appId,movie,userComment);
-    
+    const userComment = { userName, comment };
+    await addcomment(appId, movie, userComment);
+    refresh(appId, movie);
   }
 });

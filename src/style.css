@@ -1,17 +1,17 @@
 :root {
   --black: rgb(0, 0, 0);
   --white: rgb(255, 255, 255);
-  --red: rgb(249, 46, 46);
+  --red: rgb(235, 16, 16);
+  --gray: rgb(211, 211, 211);
 }
 
 body {
   background-color: var(--black);
   font-family: Netflix Sans, Helvetica Neue, Segoe UI, Roboto, Ubuntu, sans-serif;
   color: var(--white);
-  display: flex;
-  flex-direction: column;
   margin: 0;
   padding: 0;
+  align-items: center;
 }
 
 header {
@@ -72,7 +72,7 @@ footer {
   width: 25%;
   padding: 10px;
   margin-top: 50px;
-  background-color: lightgray;
+  background-color: var(--gray);
 }
 
 .likes {
@@ -103,12 +103,12 @@ footer {
 }
 
 #popup-window {
-  border: 3px solid var(--red);
+  border: 10px solid var(--black);
+  border-radius: 30px;
   background-color: var(--black);
-  position: absolute;
   z-index: 999;
-  width: 90%;
-  margin: 3rem;
+  width: 80%;
+  margin: 3rem auto;
   padding: 2rem;
   flex-direction: column;
   align-items: center;
@@ -137,12 +137,10 @@ footer {
 }
 
 .details {
-  width: 60%;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1.5fr 1fr;
   grid-template-rows: auto auto;
-  gap: 2rem;
-  text-align: center;
+  text-align: left;
 }
 
 .imageTitleDiv img {
@@ -154,4 +152,33 @@ footer {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  padding: 1rem;
+}
+
+#form input {
+  height: 3rem;
+  width: 20rem;
+}
+
+.submitbtn {
+  height: 2rem;
+}
+
+.commentlist {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.commentli {
+  border: 1px solid var(--red);
+  border-radius: 5px;
+  padding: 5px;
+  background-color: var(--red);
+  list-style: none;
+  text-align: left;
+}
+
+.background {
+  background-color: var(--gray);
 }

@@ -1,13 +1,10 @@
-import comment from "./comment";
-
-const popup = async (data,comments) => {
+const popup = async (data) => {
   const popupContainer = document.getElementById('popup-window');
 
   while (popupContainer.firstChild) {
     popupContainer.removeChild(popupContainer.firstChild);
   }
   popupContainer.index = data.id;
-  console.log( popupContainer.index)
   const cancelButton = document.createElement('button');
   cancelButton.classList.add('cancel-btn');
   popupContainer.appendChild(cancelButton);
@@ -49,27 +46,13 @@ const popup = async (data,comments) => {
   showComment.classList.add('showcomment');
   popupContainer.appendChild(showComment);
 
-
   const commentstitle = document.createElement('h2');
   showComment.appendChild(commentstitle);
-  commentstitle.innerText ="Comments";
+  commentstitle.innerText = 'Comments';
 
   const commentlist = document.createElement('ol');
+  commentlist.classList.add('commentlist');
   showComment.appendChild(commentlist);
-
-  if(comments.length > 0) {
-  comments.forEach(comment => {
-    const commentEl = document.createElement('li');
-    commentEl.innerHTML = ` 💬 ${comment.creation_date}  : ${comment.comment} by ${comment.username} `;
-    showComment.appendChild(commentEl);
-    
-  }); 
-  }
-  else{
-    const nocomments = document.createElement('p');
-    nocomments.innerText ="No comments. You are the first.🤩"
-    showComment.appendChild(nocomments);
-  }
 
   const addComment = document.createElement('div');
   addComment.classList.add('addcomment');
@@ -77,32 +60,31 @@ const popup = async (data,comments) => {
 
   const addCommentTitle = document.createElement('h2');
   addComment.appendChild(addCommentTitle);
-  addCommentTitle.innerText ="Add a comments";
+  addCommentTitle.innerText = 'Add a comments';
 
-  const form = document.createElement('form');
-  form.id = "form";
-  addComment.appendChild(form);
+  const formEl = document.createElement('form');
+  formEl.id = 'form';
+  addComment.appendChild(formEl);
 
   const inputName = document.createElement('input');
-  inputName.id = "username";
-  inputName.type = "text";
-  inputName.placeholder ="your name";
-  inputName.required;
-  form.appendChild(inputName);
+  inputName.id = 'username';
+  inputName.type = 'text';
+  inputName.placeholder = 'your name';
+  inputName.required = true;
+  formEl.appendChild(inputName);
 
   const inputComment = document.createElement('input');
-  inputComment.id = "usercomment";
-  inputComment.type = "text";
-  inputComment.placeholder ="your comment";
-  inputComment.required;
-  form.appendChild(inputComment);
+  inputComment.id = 'usercomment';
+  inputComment.type = 'text';
+  inputComment.placeholder = 'your comment';
+  inputComment.required = true;
+  formEl.appendChild(inputComment);
 
   const submitbtn = document.createElement('button');
   submitbtn.classList.add('submitbtn');
-  submitbtn.type = "submit";
-  submitbtn.innerText ="comment";
-  form.appendChild(submitbtn);
-
+  submitbtn.type = 'submit';
+  submitbtn.innerText = 'comment';
+  formEl.appendChild(submitbtn);
 };
 
 export default popup;
