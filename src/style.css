@@ -19,8 +19,49 @@ header {
   background-color: var(--black);
   width: 100%;
   justify-content: space-around;
-  height: 3rem;
   align-items: center;
+  height: 80px;
+}
+
+#logo {
+  background-image: url(images/logo.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  border: none;
+  width: 70px;
+  height: 70px;
+  margin-top: 5px;
+}
+
+#navbar {
+  display: flex;
+}
+
+#navbar span {
+  display: flex;
+  margin-right: 2rem;
+}
+
+#navbar span:hover {
+  background-color: var(--red);
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+  font-weight: 800;
+  font-size: 1.2rem;
+}
+
+#navbar span a {
+  margin: 0;
+  padding-right: 5px;
+  text-decoration: none;
+  color: var(--white);
+  font-weight: 500;
+}
+
+#counter {
+  color: var(--white);
+  font-weight: 700;
 }
 
 .nav-link {

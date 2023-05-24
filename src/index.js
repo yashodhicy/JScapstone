@@ -7,6 +7,7 @@ import popup from './modules/popup.js';
 import showhide from './modules/showhide.js';
 import addcomment from './modules/comment.js';
 import refresh from './modules/refresh.js';
+import updateCount from './modules/moviesCounter.js';
 
 const appId = 'WGv1nO0NTRyk5wZp7rJP';
 
@@ -38,6 +39,10 @@ const updateLikes = async (appId) => {
 const likes = await updateLikes(appId);
 
 await display(movies, likes, appId);
+
+// update count
+const counter = document.getElementById('counter');
+counter.innerHTML = await updateCount();
 
 const likeBtns = document.querySelectorAll('.like-button');
 
