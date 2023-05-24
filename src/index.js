@@ -74,6 +74,7 @@ commentbtns.forEach((commentbtn, index) => {
     await showhide();
     await popup(resdata);
     refresh(appId, index + 1);
+    window.scrollTo(2, 2);
   });
 });
 
@@ -97,7 +98,7 @@ document.addEventListener('click', async (event) => {
     const userComment = { userName, comment };
     await addcomment(appId, movie, userComment);
     refresh(appId, movie);
-    document.getElementById('username').value ='';
-    document.getElementById('usercomment').value ='';
+    document.getElementById('username').value = '';
+    document.getElementById('usercomment').value = '';
   }
 });
