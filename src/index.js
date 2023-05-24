@@ -11,7 +11,7 @@ import updateCount from './modules/moviesCounter.js';
 
 const appId = 'WGv1nO0NTRyk5wZp7rJP';
 
-const numberOfMovies = 6;
+const numberOfMovies = 9;
 let index = 1;
 const movies2 = [];
 const movies = [];
@@ -97,5 +97,7 @@ document.addEventListener('click', async (event) => {
     const userComment = { userName, comment };
     await addcomment(appId, movie, userComment);
     refresh(appId, movie);
+    document.getElementById('username').value ='';
+    document.getElementById('usercomment').value ='';
   }
 });
