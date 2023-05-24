@@ -8,6 +8,7 @@ import showhide from './modules/showhide.js';
 import addcomment from './modules/comment.js';
 import refresh from './modules/refresh.js';
 import updateCount from './modules/moviesCounter.js';
+import CommentCount from './modules/CommentCount.js';
 
 const appId = 'WGv1nO0NTRyk5wZp7rJP';
 
@@ -73,8 +74,9 @@ commentbtns.forEach((commentbtn, index) => {
     const resdata = await getMovie(index + 1);
     await showhide();
     await popup(resdata);
-    refresh(appId, index + 1);
     window.scrollTo(2, 2);
+    await refresh(appId, index + 1);
+    await CommentCount();
   });
 });
 
@@ -97,8 +99,11 @@ document.addEventListener('click', async (event) => {
     const movie = target.closest('#popup-window').index;
     const userComment = { userName, comment };
     await addcomment(appId, movie, userComment);
-    refresh(appId, movie);
+    await refresh(appId, movie);
+    await CommentCount();
     document.getElementById('username').value = '';
     document.getElementById('usercomment').value = '';
   }
 });
+
+CommentCount();
