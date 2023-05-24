@@ -1,14 +1,13 @@
 const updateCount = require('./moviesCounter.js');
 
-describe('count movies', () => {
-  document.body.innerHTML = `<div class='movie-card'>a</div>
-<div class='movie-card'>b</div>
-<div class='movie-card'>b</div>
-<div class='movie-card'>a</div>
-<div class='movie-card'>b</div>
-<div class='movie-card'>a</div>`;
+describe('show number of movies in the DOM', () => {
+  document.body.innerHTML = `
+  <div class='movie-card'>movie</div>
+  <div class='movie-card'>movie</div>
+  <div class='movie-card'>movie</div>
+  `;
 
-  it('count', async () => {
-    expect(await updateCount()).toEqual('(6)');
+  it('Should return 3 movies,', async () => {
+    expect(await updateCount()).toEqual('(3)');
   });
 });
