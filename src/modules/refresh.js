@@ -3,6 +3,7 @@ import getComments from './getcomments.js';
 const refresh = async (appId, index) => {
   const comments = await getComments(appId, index);
   const list = document.querySelector('.commentlist');
+
   if (comments.length > 0) {
     list.innerHTML = '';
     comments.forEach((comment) => {

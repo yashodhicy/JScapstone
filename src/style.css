@@ -1,14 +1,16 @@
 :root {
-  --black: rgb(0, 0, 0);
-  --white: rgb(255, 255, 255);
-  --red: rgb(235, 16, 16);
-  --gray: rgb(211, 211, 211);
+  --darkblue: #3d5678f9;
+  --bluewhite: #def1ff;
+  --nightblue: #011c31;
+  --gray: #9db2bf;
+  --light: #ebf2f6a8;
 }
 
 body {
-  background-color: var(--black);
+  background-color: var(--darkblue);
   font-family: Netflix Sans, Helvetica Neue, Segoe UI, Roboto, Ubuntu, sans-serif;
-  color: var(--white);
+  font-size: large;
+  color: var(--bluewhite);
   margin: 0;
   padding: 0;
   align-items: center;
@@ -16,7 +18,7 @@ body {
 
 header {
   position: fixed;
-  background-color: var(--black);
+  background-color: var(--nightblue);
   width: 100%;
   justify-content: space-around;
   align-items: center;
@@ -41,38 +43,37 @@ header {
 #navbar span {
   display: flex;
   margin-right: 2rem;
+  font-weight: 500;
 }
 
 #navbar span:hover {
-  background-color: var(--red);
+  background-color: var(--darkblue);
   border-radius: 5px;
   padding: 0.5rem 1rem;
   font-weight: 800;
-  font-size: 1.2rem;
 }
 
 #navbar span a {
   margin: 0;
   padding-right: 5px;
   text-decoration: none;
-  color: var(--white);
-  font-weight: 500;
+  color: var(--bluewhite);
 }
 
 #counter {
-  color: var(--white);
-  font-weight: 700;
+  color: var(--bluewhite);
+  font-weight: 500;
 }
 
 .nav-link {
   margin-right: 2rem;
   text-decoration: none;
-  color: var(--white);
+  color: var(--bluewhite);
   font-weight: 500;
 }
 
 .nav-link:hover {
-  background-color: var(--red);
+  background-color: var(--darkblue);
   border-radius: 5px;
   padding: 0.5rem 1rem;
   font-weight: 800;
@@ -80,7 +81,7 @@ header {
 
 footer {
   display: flex;
-  border: 2px solid var(--white);
+  border: 2px solid var(--bluewhite);
   height: 3rem;
   align-items: center;
   margin-top: auto;
@@ -106,7 +107,7 @@ footer {
 
 .movie-name {
   font-size: 1rem;
-  color: var(--black);
+  color: var(--nightblue);
 }
 
 .movie-card {
@@ -119,7 +120,7 @@ footer {
 .likes {
   display: flex;
   align-items: center;
-  color: var(--black);
+  color: var(--nightblue);
 }
 
 .likes-counter {
@@ -131,29 +132,43 @@ footer {
 .like-button {
   font-size: 1rem;
   font-weight: 700;
-  background-color: var(--red);
-  color: var(--white);
+  background-color: var(--nightblue);
+  color: var(--bluewhite);
 }
 
 .comments {
-  background-color: var(--red);
-  color: var(--white);
+  background-color: var(--nightblue);
+  color: var(--bluewhite);
   font-size: 1.2rem;
   width: 100%;
   height: 50px;
 }
 
 #popup-window {
-  border: 10px solid var(--black);
+  position: absolute;
+  top: 3rem;
+  left: 20rem;
+  border: 10px solid var(--darkblue);
   border-radius: 30px;
-  background-color: var(--black);
+  background-color: var(--darkblue);
   z-index: 999;
-  width: 80%;
+  width: 50%;
   margin: 3rem auto;
   padding: 2rem;
   flex-direction: column;
   align-items: center;
   text-align: center;
+}
+
+#overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--light);
+  backdrop-filter: blur(5px);
+  z-index: 998;
 }
 
 .hide {
@@ -167,14 +182,15 @@ footer {
 .cancel-btn {
   background-image: url(images/cancel.png);
   background-size: cover;
-  background-color: transparent;
-  border: none;
+  background-color: var(--bluewhite);
+  border-radius: 10%;
+  border: 1px solid var(--bluewhite);
   position: absolute;
   margin: 1rem;
   top: 5px;
   right: 5px;
-  height: 3rem;
-  width: 3rem;
+  height: 4rem;
+  width: 4rem;
 }
 
 .details {
@@ -202,7 +218,9 @@ footer {
 }
 
 .submitbtn {
+  box-shadow: var(--nightblue) 0 2px 4px;
   height: 2rem;
+  color: var(--nightblue);
 }
 
 .commentlist {
@@ -212,10 +230,10 @@ footer {
 }
 
 .commentli {
-  border: 1px solid var(--red);
+  border: 1px solid var(--nightblue);
   border-radius: 5px;
   padding: 5px;
-  background-color: var(--red);
+  background-color: var(--nightblue);
   list-style: none;
   text-align: left;
 }

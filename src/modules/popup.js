@@ -47,6 +47,7 @@ const popup = async (data) => {
   popupContainer.appendChild(showComment);
 
   const commentstitle = document.createElement('h2');
+  commentstitle.classList.add('titlecomments');
   showComment.appendChild(commentstitle);
   commentstitle.innerText = 'Comments';
 
