@@ -4,7 +4,7 @@ const popup = async (data) => {
   while (popupContainer.firstChild) {
     popupContainer.removeChild(popupContainer.firstChild);
   }
-
+  popupContainer.index = data.id;
   const cancelButton = document.createElement('button');
   cancelButton.classList.add('cancel-btn');
   popupContainer.appendChild(cancelButton);
@@ -41,6 +41,50 @@ const popup = async (data) => {
   const status = document.createElement('p');
   status.innerText = `Genres : ${data.status}`;
   detailsDiv.appendChild(status);
+
+  const showComment = document.createElement('div');
+  showComment.classList.add('showcomment');
+  popupContainer.appendChild(showComment);
+
+  const commentstitle = document.createElement('h2');
+  showComment.appendChild(commentstitle);
+  commentstitle.innerText = 'Comments';
+
+  const commentlist = document.createElement('ol');
+  commentlist.classList.add('commentlist');
+  showComment.appendChild(commentlist);
+
+  const addComment = document.createElement('div');
+  addComment.classList.add('addcomment');
+  popupContainer.appendChild(addComment);
+
+  const addCommentTitle = document.createElement('h2');
+  addComment.appendChild(addCommentTitle);
+  addCommentTitle.innerText = 'Add a comments';
+
+  const formEl = document.createElement('form');
+  formEl.id = 'form';
+  addComment.appendChild(formEl);
+
+  const inputName = document.createElement('input');
+  inputName.id = 'username';
+  inputName.type = 'text';
+  inputName.placeholder = 'your name';
+  inputName.required = true;
+  formEl.appendChild(inputName);
+
+  const inputComment = document.createElement('input');
+  inputComment.id = 'usercomment';
+  inputComment.type = 'text';
+  inputComment.placeholder = 'your comment';
+  inputComment.required = true;
+  formEl.appendChild(inputComment);
+
+  const submitbtn = document.createElement('button');
+  submitbtn.classList.add('submitbtn');
+  submitbtn.type = 'submit';
+  submitbtn.innerText = 'comment';
+  formEl.appendChild(submitbtn);
 };
 
 export default popup;

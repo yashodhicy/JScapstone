@@ -5,6 +5,8 @@ import getLikes from './modules/getLikes.js';
 import like from './modules/like.js';
 import popup from './modules/popup.js';
 import showhide from './modules/showhide.js';
+import addcomment from './modules/comment.js';
+import refresh from './modules/refresh.js';
 
 const appId = 'WGv1nO0NTRyk5wZp7rJP';
 
@@ -66,14 +68,29 @@ commentbtns.forEach((commentbtn, index) => {
     const resdata = await getMovie(index + 1);
     await showhide();
     await popup(resdata);
+    refresh(appId, index + 1);
   });
 });
 
 document.addEventListener('click', async (event) => {
   const { target } = event;
 
-  // Check if the clicked element is the cancel button
   if (target.classList.contains('cancel-btn')) {
     await showhide();
+  }
+});
+
+// add comment
+
+document.addEventListener('click', async (event) => {
+  const { target } = event;
+  if (target.classList.contains('submitbtn')) {
+    event.preventDefault();
+    const userName = document.getElementById('username').value;
+    const comment = document.getElementById('usercomment').value;
+    const movie = target.closest('#popup-window').index;
+    const userComment = { userName, comment };
+    await addcomment(appId, movie, userComment);
+    refresh(appId, movie);
   }
 });
