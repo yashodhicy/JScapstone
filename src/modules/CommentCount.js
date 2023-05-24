@@ -5,6 +5,7 @@ const CommentCount = async () => {
   if (count > 0) {
     title.innerText = `Comments (${count})`;
   }
+  return count
 };
 
 export default CommentCount;
