@@ -92,7 +92,7 @@ footer {
 
 #movies-container {
   display: grid;
-  grid-template-columns: repeat(3,1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
   margin: 3rem;
   margin-top: 4rem;
@@ -120,13 +120,13 @@ footer {
   width: 90%;
   height: 30rem;
   border-radius: 10px;
-  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+  box-shadow: rgba(0, 0, 0, 0.3) 0 19px 38px, rgba(0, 0, 0, 0.22) 0 15px 12px;
 }
 
 .movie-name {
   font-size: 1rem;
   color: var(--nightblue);
-  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+  box-shadow: rgba(0, 0, 0, 0.3) 0 19px 38px, rgba(0, 0, 0, 0.22) 0 15px 12px;
   padding: 2px;
   border-radius: 5px;
   width: 80%;
@@ -142,7 +142,7 @@ footer {
   margin-right: 10px;
   font-size: 1rem;
   font-weight: 700;
-  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+  box-shadow: rgba(0, 0, 0, 0.3) 0 19px 38px, rgba(0, 0, 0, 0.22) 0 15px 12px;
 }
 
 .like-button {
@@ -255,4 +255,3 @@ footer {
   list-style: none;
   text-align: left;
 }
-
