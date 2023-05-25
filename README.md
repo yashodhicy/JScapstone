@@ -59,7 +59,7 @@
 
 ## 🚀 Live Video <a name="live-video"></a>
 
-- [live video ](#)  
+- [live video ](https://drive.google.com/file/d/17MlcWV6n4ek6AlbDsr4EyyLLqcvb162U/view?usp=sharing) 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
