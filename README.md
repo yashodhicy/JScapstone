@@ -55,11 +55,11 @@
 ## 🚀 Live Demo<a name="live-demo"></a>
 
 
-- [live project](#https://yashodhicy.github.io/JScapstone/dist/) - 
+- [live project](https://yashodhicy.github.io/JScapstone/dist/) 
 
 ## 🚀 Live Video <a name="live-video"></a>
 
-- [live video ](#) - upcoming
+- [live video ](#)  
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
