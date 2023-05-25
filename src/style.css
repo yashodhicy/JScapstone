@@ -1,0 +1,255 @@
+:root {
+  --darkblue: #3d5678f9;
+  --bluewhite: #def1ff;
+  --nightblue: #011c31;
+  --gray: #9db2bf;
+  --light: #ebf2f6a8;
+}
+
+body {
+  background-color: var(--darkblue);
+  font-family: Netflix Sans, Helvetica Neue, Segoe UI, Roboto, Ubuntu, sans-serif;
+  font-size: large;
+  color: var(--bluewhite);
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  background-color: var(--nightblue);
+  width: 100%;
+  justify-content: space-around;
+  align-items: center;
+  height: 4.2rem;
+}
+
+#logo {
+  background-image: url(images/logo.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  border: none;
+  width: 70px;
+  height: 70px;
+  margin-top: 5px;
+}
+
+#navbar {
+  display: flex;
+}
+
+#navbar span {
+  display: flex;
+  margin-right: 2rem;
+  font-weight: 500;
+}
+
+#navbar span:hover {
+  background-color: var(--darkblue);
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+  font-weight: 800;
+}
+
+#navbar span a {
+  margin: 0;
+  padding-right: 5px;
+  text-decoration: none;
+  color: var(--bluewhite);
+}
+
+#counter {
+  color: var(--bluewhite);
+  font-weight: 500;
+}
+
+.nav-link {
+  margin-right: 2rem;
+  text-decoration: none;
+  color: var(--bluewhite);
+  font-weight: 500;
+}
+
+.nav-link:hover {
+  background-color: var(--darkblue);
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+  font-weight: 800;
+}
+
+footer {
+  display: flex;
+  border: 2px solid var(--bluewhite);
+  height: 3rem;
+  align-items: center;
+  margin-top: auto;
+  padding-left: 0.5rem;
+  width: 99%;
+  font-weight: 900;
+}
+
+#movies-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin: 3rem;
+  margin-top: 4rem;
+}
+
+.movie-card {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 0;
+  margin: 2rem;
+  background-color: var(--gray);
+  align-items: center;
+  border-radius: 10px;
+  box-shadow: rgba(1, 17, 60, 0.4) 5px 5px, rgba(1, 17, 60, 0.3) 10px 10px, rgba(1, 17, 60, 0.2) 15px 15px, rgba(1, 17, 60, 0.1) 20px 20px, rgba(1, 17, 60, 0.05) 25px 25px;
+}
+
+.movie-description {
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.movie-image {
+  width: 90%;
+  height: 20rem;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.3) 0 19px 38px, rgba(0, 0, 0, 0.22) 0 15px 12px;
+}
+
+.movie-name {
+  font-size: 1rem;
+  color: var(--nightblue);
+  padding: 2px;
+  font-weight: 800;
+  border-radius: 5px;
+  width: 80%;
+}
+
+.likes {
+  display: flex;
+  align-items: center;
+  color: var(--nightblue);
+}
+
+.likes-counter {
+  margin-right: 10px;
+  font-size: 1rem;
+  font-weight: 800;
+}
+
+.like-button {
+  font-size: 1rem;
+  font-weight: 700;
+  border-radius: 5px;
+  background-color: var(--nightblue);
+  color: var(--bluewhite);
+}
+
+.comments {
+  background-color: var(--nightblue);
+  color: var(--bluewhite);
+  font-size: 1.2rem;
+  width: 90%;
+  height: 2rem;
+  border-radius: 10px;
+}
+
+#popup-window {
+  position: absolute;
+  top: 3rem;
+  left: 20rem;
+  border: 10px solid var(--darkblue);
+  border-radius: 30px;
+  background-color: var(--darkblue);
+  z-index: 999;
+  width: 50%;
+  margin: 3rem auto;
+  padding: 2rem;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+#overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--light);
+  backdrop-filter: blur(5px);
+  z-index: 998;
+}
+
+.hide {
+  display: none;
+}
+
+.show {
+  display: flex;
+}
+
+.cancel-btn {
+  background-image: url(images/cancel.png);
+  background-size: cover;
+  background-color: var(--bluewhite);
+  border-radius: 10%;
+  border: 1px solid var(--bluewhite);
+  position: absolute;
+  margin: 1rem;
+  top: 5px;
+  right: 5px;
+  height: 4rem;
+  width: 4rem;
+}
+
+.details {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  grid-template-rows: auto auto;
+  text-align: left;
+}
+
+.imageTitleDiv img {
+  width: 20rem;
+  height: 20rem;
+}
+
+#form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 1rem;
+}
+
+#form input {
+  height: 3rem;
+  width: 20rem;
+}
+
+.submitbtn {
+  box-shadow: var(--nightblue) 0 2px 4px;
+  height: 2rem;
+  color: var(--nightblue);
+}
+
+.commentlist {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.commentli {
+  border: 1px solid var(--nightblue);
+  border-radius: 5px;
+  padding: 5px;
+  background-color: var(--nightblue);
+  list-style: none;
+  text-align: left;
+}
